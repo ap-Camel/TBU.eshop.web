@@ -8,7 +8,7 @@ using TBU.eshop.web.Models.Infrastructure.Database;
 namespace TBU.eshop.web.Migrations
 {
     [DbContext(typeof(EshopDbContext))]
-    [Migration("20220317094823_MySQL_1.0.0_initialization")]
+    [Migration("20220317102810_MySQL_1.0.0_initialization")]
     partial class MySQL_100_initialization
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
