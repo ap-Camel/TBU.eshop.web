@@ -11,6 +11,15 @@ namespace TBU.eshop.web.Areas.Admin.Controllers
     [Area("Admin")]
     public class CarouselController : Controller
     {
+        readonly EshopDbContext eshopDbContext;
+
+        public CarouselController(EshopDbContext eshopDB)
+        {
+            eshopDbContext = eshopDB;
+        }
+
+
+
         public IActionResult Select()
         {
             IList<CarouselItem> carouselItems = DatabaseFake.CarouselItems;
@@ -27,6 +36,8 @@ namespace TBU.eshop.web.Areas.Admin.Controllers
         public IActionResult Create(CarouselItem carouselItem)
         {
             DatabaseFake.CarouselItems.Add(carouselItem);
+
+            eshopDbContext.SaveChanges();
 
             return RedirectToAction(nameof(Select));
         }
