@@ -11,6 +11,7 @@ namespace TBU.eshop.web.Areas.Admin.Controllers
     [Area("Admin")]
     public class CarouselController : Controller
     {
+        
         readonly EshopDbContext eshopDbContext;
         public CarouselController(EshopDbContext eshopDB)
         {
